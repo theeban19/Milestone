@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/backgroundDark"
+    android:id="@+id/forumCardParentLayout"
+    android:paddingTop="4dp"
+    android:paddingBottom="4dp"
+    android:paddingRight="8dp"
+    android:paddingLeft="8dp"
+    >
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/backgroundLight"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="4dp"
+        >
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            >
+
+            <!--Title-->
+            <TextView
+                android:id="@+id/postTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="23sp"
+                android:textColor="#212121"
+                android:textAlignment="center" />
+            <!--Post tag-->
+            <TextView
+                android:id="@+id/postedBy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="#616161"
+                android:textAlignment="center"
+                android:layout_below="@id/postTitle"
+                android:layout_marginLeft="2dp"
+                />
+
+            <!--Body-->
+            <TextView
+                android:id="@+id/body"
+                android:layout_marginTop="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="#424242"
+                android:layout_below="@id/postedBy"
+
+                />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/linearlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/body"
+                android:layout_marginTop="8dp">
+
+                <!--Track btn-->
+                <TextView
+                    android:id="@+id/track"
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginStart="8dp"
+
+                    android:layout_marginTop="8dp"
+                    android:text="Track"
+                    android:textColor="@color/secondaryColor"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!--view more btn-->
+                <TextView
+                    android:id="@+id/viewMore"
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+
+                    android:layout_marginTop="8dp"
+                    android:text="View More"
+                    android:textColor="@color/secondaryColor"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/track"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--Time stamp-->
+                <TextView
+                    android:id="@+id/timeStamp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="right"
+
+                    android:text="12:30pm"
+                    android:textColor="#757575"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+           <!-- <TextView
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:id="@+id/popMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&#8942;"
+                android:textSize="20sp"
+                android:layout_marginRight="4dp"
+                />-->
+
+            <ImageButton
+                android:id="@+id/popMenu"
+                android:layout_width="15dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_more_popup"
+                android:layout_marginTop="4dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:background="@null"/>
+
+
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

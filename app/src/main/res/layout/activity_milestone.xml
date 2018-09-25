@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+
+
+    <!--body, with layout behavior set to hide/show top app bar based on direction of scroll.-->
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#b71c1c">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:elevation="8dp"
+            app:layout_scrollFlags="scroll|enterAlways|snap"
+            app:title="Milestone"
+            app:titleTextColor="@color/primaryTextColor"></android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center|bottom"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/but3"
+            android:layout_width="0dip"
+            android:layout_height="60dp"
+            android:layout_weight=".5"
+            android:background="#882ee2"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:text="Add New Milestone"
+            android:textColor="@android:color/background_light"
+            android:typeface="sans"
+            android:gravity="center"
+            android:layout_gravity="bottom"/>
+
+        <Button
+            android:id="@+id/but7"
+            android:layout_weight=".5"
+            android:layout_width="0dip"
+            android:layout_height="60dp"
+            android:background="@android:color/holo_red_light"
+            android:onClick="parseJSON"
+            android:text="View All"
+            android:textColor="@android:color/background_light"
+            android:typeface="sans"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:gravity="center"
+            android:layout_gravity="bottom"/>
+    </LinearLayout>
+
+</LinearLayout>
+
+

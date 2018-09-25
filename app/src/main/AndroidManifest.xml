@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.construction.app.cpms">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- window soft input mode prevents bottom bar coming up with keyboard -->
+        <activity
+            android:name=".SecondaryActivity"
+            android:label="@string/title_activity_secondary"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity android:name=".expenses.actiExpenses" />
+        <activity android:name=".inventoryManagement.inventory_items_list" />
+        <activity android:name=".inventoryManagement.inventory_category_grid" />
+        <activity
+            android:name=".inventoryManagement.inventory_add_item"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".inventoryManagement.inventory_request_item"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".inventoryManagement.inventory_project_manager" />
+        <activity android:name=".expenses.Expense_Category_List" />
+        <activity android:name=".expenses.Expense_Add" />
+        <activity android:name=".miscellaneous.addForumPost" />
+        <activity android:name=".inventoryManagement.testParcel" />
+        <activity android:name=".miscellaneous.editForumPost" />
+        <activity android:name=".Milestone.createMilestone" />
+        <activity android:name=".Milestone.milestone" />
+        <activity android:name=".Milestone.viewMilestone" />
+        <activity android:name=".Milestone.DisplayListView"></activity>
+    </application>
+
+</manifest>

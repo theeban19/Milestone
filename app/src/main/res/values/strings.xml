@@ -1,0 +1,68 @@
+<resources>
+    <string name="app_name">CPMS</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sign_in_heading">Sign In</string>
+    <string name="construction_project_management_SubHeading">Construction Project Management</string>
+    <string name="email_textBox_Placeholder">Email</string>
+    <string name="password_textBox_Placeholder">Password</string>
+    <string name="forgot_password_signIn_form">Forgot Password</string>
+    <string name="sign_in_btn_value">Sign In</string>
+    <string name="don_t_have_an_account_sign_up">Don\'t Have An Account? Sign Up</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="continue1">Continue</string>
+    <string name="forgot_password">Reset Password</string>
+    <string name="fill_the_form_to_reset_your_password">Fill The Form To Reset Your Password</string>
+    <string name="email_address">Email Address</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_new_password">Confirm New Password</string>
+    <string name="change">Change</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="work_in_progress">Work In Progress</string>
+    <string name="title_activity_secondary">SecondaryActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="Messages">Messages</string>
+    <string name="Forums">Forums</string>
+
+    <string name="amount_listadapter">Amount</string>
+    <string name="expenses">Expenses</string>
+    <string name="directCost">Direct Costs</string>
+    <string name="miscellaneous">Miscellaneous</string>
+    <string name="consultation">Consultation</string>
+    <string name="overheads">Overheads</string>
+    <string name="recents">Recent Summary</string>
+    <string name="item_name">Item Name</string>
+    <string name="inventory_item_qty">Item Qty</string>
+    <string name="inventory_item_name">item Name</string>
+    <string name="categories_title">CATEGORIES</string>
+    <string name="descriptionExpense">Description</string>
+    <string name="Rs_Expense">Rs.</string>
+    <string name="category_expense">Category</string>
+    <string name="submit">Submit</string>
+    <string name="hint">hint</string>
+
+    //Array to get units for inventory units spinner
+
+    <string-array name="inventory_units_array">
+        <item>Kg</item>
+        <item>Tonnes</item>
+        <item>Meters</item>
+        <item>Square Meters</item>
+        <item>Cubes</item>
+        <item>Liters</item>
+        <item>Nos</item>
+        <item>Bags</item>
+        <item>Bars</item>
+
+
+    </string-array>
+
+
+</resources>

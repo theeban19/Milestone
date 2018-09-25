@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<!--    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:titleTextColor="@color/primaryTextColor"
+            app:title="@string/dashboard"
+            >
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>-->
+
+
+    <!--Refered to https://stackoverflow.com/questions/10610943/gridlayout-scrollview
+        to get the scrolling to work with gridlayout. Out take-: hardcode gridlayout height
+    -->
+
+<android.support.design.widget.CoordinatorLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/backgroundDark"
+    >
+
+    <!--top appbar-->
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:titleTextColor="@color/primaryTextColor"
+            app:title="@string/dashboard"
+            android:elevation="8dp"
+            app:layout_scrollFlags="scroll|enterAlways|snap"
+            >
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+
+    <!--body, with layout behavior set to hide/show top app bar based on direction of scroll.-->
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+
+            >
+
+            <android.support.v7.widget.GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:padding="8dp"
+                android:scrollbars="vertical"
+
+                app:alignmentMode="alignMargins"
+                app:columnCount="2"
+                app:columnOrderPreserved="false"
+                app:rowCount="3"
+                app:useDefaultMargins="true"
+
+                >
+                <!--col1 row1-->
+                <android.support.v7.widget.CardView
+                    android:id="@+id/plansTile"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:cardBackgroundColor="@color/cardBackground"
+                    app:cardCornerRadius="4dp"
+                    app:cardElevation="4dp"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_margin="16dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Plans"
+                            android:textAlignment="center"
+                            android:textColor="@color/primaryTextColor"
+                            android:textSize="@dimen/db_card_title" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/db_sketch" />
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+                <!--col2 row1-->
+                <android.support.v7.widget.CardView
+                    android:id="@+id/inventoryTile"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:cardBackgroundColor="@color/cardBackground"
+                    app:cardCornerRadius="4dp"
+                    app:cardElevation="4dp"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_margin="16dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            android:text="Inventory"
+                            android:textAlignment="center"
+                            android:textColor="@color/primaryTextColor"
+                            android:textSize="@dimen/db_card_title" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/db_inventory" />
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+                <!--col1 row2-->
+                <android.support.v7.widget.CardView
+                    android:id="@+id/financesTile"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:cardBackgroundColor="@color/cardBackground"
+                    app:cardCornerRadius="4dp"
+                    app:cardElevation="4dp"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_margin="16dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Finances"
+                            android:textAlignment="center"
+                            android:textColor="@color/primaryTextColor"
+                            android:textSize="@dimen/db_card_title" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/db_inventory" />
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+                <!--col2 row2-->
+                <android.support.v7.widget.CardView
+                    android:id="@+id/forumsTile"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:cardBackgroundColor="@color/cardBackground"
+                    app:cardCornerRadius="4dp"
+                    app:cardElevation="4dp"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_margin="16dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Forums"
+                            android:textAlignment="center"
+                            android:textColor="@color/primaryTextColor"
+                            android:textSize="@dimen/db_card_title" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/db_inventory" />
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+                <!--col1 row3-->
+                <android.support.v7.widget.CardView
+                    android:id="@+id/milestonesTile"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:cardBackgroundColor="@color/cardBackground"
+                    app:cardCornerRadius="4dp"
+                    app:cardElevation="4dp"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_margin="16dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Milestones"
+                            android:textAlignment="center"
+                            android:textColor="@color/primaryTextColor"
+                            android:textSize="@dimen/db_card_title" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/db_inventory" />
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+            </android.support.v7.widget.GridLayout>
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>
+
