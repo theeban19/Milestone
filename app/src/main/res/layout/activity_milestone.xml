@@ -26,7 +26,22 @@
             app:layout_scrollFlags="scroll|enterAlways|snap"
             app:title="Milestone"
             app:titleTextColor="@color/primaryTextColor"></android.support.v7.widget.Toolbar>
+
     </android.support.design.widget.AppBarLayout>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight=".5"
+        app:srcCompat="@drawable/milestone_logo" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight=".5"
+        app:srcCompat="@drawable/milestoneimage2" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -38,31 +53,39 @@
         <Button
             android:id="@+id/but3"
             android:layout_width="0dip"
-            android:layout_height="60dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
             android:layout_weight=".5"
             android:background="#882ee2"
+            android:gravity="center"
             android:minHeight="0dp"
             android:minWidth="0dp"
             android:text="Add New Milestone"
             android:textColor="@android:color/background_light"
-            android:typeface="sans"
-            android:gravity="center"
-            android:layout_gravity="bottom"/>
+            android:typeface="sans" />
 
         <Button
             android:id="@+id/but7"
-            android:layout_weight=".5"
             android:layout_width="0dip"
-            android:layout_height="60dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
+            android:layout_weight=".5"
             android:background="@android:color/holo_red_light"
+            android:gravity="center"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
             android:onClick="parseJSON"
             android:text="View All"
             android:textColor="@android:color/background_light"
-            android:typeface="sans"
-            android:minHeight="0dp"
-            android:minWidth="0dp"
-            android:gravity="center"
-            android:layout_gravity="bottom"/>
+            android:typeface="sans" />
+
+        <Button
+            android:id="@+id/but2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:text="View Timeline" />
+
     </LinearLayout>
 
 </LinearLayout>

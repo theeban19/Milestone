@@ -43,7 +43,9 @@
         <activity android:name=".Milestone.createMilestone" />
         <activity android:name=".Milestone.milestone" />
         <activity android:name=".Milestone.viewMilestone" />
-        <activity android:name=".Milestone.DisplayListView"></activity>
+        <activity android:name=".Milestone.DisplayListView" />
+        <activity android:name=".Milestone.timeline" />
+        <activity android:name=".Milestone.time"></activity>
     </application>
 
 </manifest>

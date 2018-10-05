@@ -28,11 +28,11 @@ import java.util.jar.Attributes;
 
 public class createMilestone extends AppCompatActivity {
 
-    EditText H_text1;
-    EditText H_text2;
-    EditText H_text3;
-    EditText H_text4;
-    EditText H_text5;
+    EditText H_text1; //Name
+    EditText H_text2; //Description
+    EditText H_text3; //Task
+    EditText H_text4; //EmployeeId
+    EditText H_text5; //Date
 
 
     EditText name,description,emp_id,date,task;

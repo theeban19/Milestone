@@ -23,17 +23,21 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class DisplayListView extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class timeline extends AppCompatActivity {
     JSONObject jsonObject;
     private static JSONArray jsonArray;
-    private static milestoneAdapter milestoneAdapter;
-    ListView listView;
+    private static TimelineAdapter timelineAdapter;
+    static ListView listView;
 
     private static String json_string;
 
     private static RequestQueue requestQueue;
     private static String PHP_SCRIPT_URL = "https://projectcpms99.000webhostapp.com/scripts/Theeban/getmilestone.php";
     private static StringRequest stringRequest;
+    private static ArrayList<MilestoneView> listItems = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +58,7 @@ public class DisplayListView extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 MilestoneView o = (MilestoneView) parent.getItemAtPosition(position);
 
-                Intent intent = new Intent(DisplayListView.this,viewMilestone.class);
+                Intent intent = new Intent(timeline.this,viewMilestone.class);
                 intent.putExtra("id",o.getId());
 
                 startActivity(intent);
@@ -68,8 +72,7 @@ public class DisplayListView extends AppCompatActivity {
         LayoutParams params = listView.getLayoutParams();
         listView.setLayoutParams(params);
 
-        milestoneAdapter = new milestoneAdapter(this, R.layout.row_layout);
-        listView.setAdapter(milestoneAdapter);
+        timelineAdapter = new TimelineAdapter(this, R.layout.activity_time_adapter);
     }
 
     private static void fetchdata(){
@@ -105,9 +108,18 @@ public class DisplayListView extends AppCompatActivity {
                                 date = JO.getString("Date");
 
                                 MilestoneView milestoneView = new MilestoneView(id, name, description, task, employeeid, date);
-                                milestoneAdapter.add(milestoneView);
+                                listItems.add(milestoneView);
+//                                timelineAdapter.add(milestoneView);
                                 count ++;
                             }
+
+                            Collections.sort(listItems,new DateComparator());
+
+                            for (MilestoneView O : listItems) {
+                                timelineAdapter.add(O);
+                            }
+
+                            listView.setAdapter(timelineAdapter);
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -140,7 +152,7 @@ public class DisplayListView extends AppCompatActivity {
     {  // After a pause OR at startup
         super.onRestart();
         initListView();
-        //Refresh stuff here
+        //Refresh your stuff here
         fetchdata();
     }
 }

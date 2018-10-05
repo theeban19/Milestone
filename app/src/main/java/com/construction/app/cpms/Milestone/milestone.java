@@ -39,7 +39,7 @@ public class milestone extends AppCompatActivity implements AdapterView.OnItemCl
     };
 
 
-    public Button but3, but2, but7;
+    public Button but3, but2, but7; //add new milestone, view all, timeline
     private static String json_string;
 
     private static RequestQueue requestQueue;
@@ -67,6 +67,18 @@ public class milestone extends AppCompatActivity implements AdapterView.OnItemCl
             public void onClick(View view) {
 
                 Intent intent = new Intent(milestone.this,DisplayListView.class);
+                intent.putExtra("json_data",json_string);
+
+                startActivity(intent);
+            }
+        });
+
+        but2 = (Button)findViewById(R.id.but2);
+        but2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(milestone.this,timeline.class);
                 intent.putExtra("json_data",json_string);
 
                 startActivity(intent);
